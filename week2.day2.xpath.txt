@@ -1,0 +1,100 @@
+Basic xPath:
+
+1. Attribute based xPath
+//tagName[@attributeName='attributeValue']
+//input[@id='username']
+//input[@class='inputLogin']
+
+Multiple attributes can be used
+//input[@class='inputLogin'][@id='username'] - AND condition
+(or)
+//input[@class='inputLogin' and @id='username']
+
+//input[@class='inputLogin' or @id='username']
+
+2. Text based xPath
+//tagName[text()='textValue']
+//a[text()='CRM/SFA']
+//h2[text()='Leaftaps Login']
+
+3. Partial Attribute Based xPath
+//tagName[contains(@attributeName,'attributeValue')]
+//input[contains(@id,'user')]
+
+4. Partial Text Based xPath
+//tagName[contains(text(),'textValue')]
+//h2[contains(text(),'Login')]
+
+5. Index Based / Collection Based xPath
+
+(//input[@class='inputLogin'])[2]
+
+
+Advanced xPAth:
+
+1. Parent to Child
+
+basic xPath/tagName
+
+//form[@id='login']/p[@class='top']
+//form[@id='login']/p[2]
+
+2. Child to Parent
+
+basic xPath/parent::tagName
+
+//input[@id='password']/parent::p
+
+//p/parent::form
+
+
+3. GrandParent and GrandChild
+
+basic xPath//tagName
+
+//form[@id='login']//input[@id='password']
+
+4. GrandChild to GrandParent
+
+basic xPath/ancestor::tagName
+
+
+//input[@id='password']/ancestor::form[@id='login']
+
+5. Elder to Younger Sibling
+
+basic xPath/following-sibling::tagName
+
+//label[contains(text(),'Password')]/following-sibling::input[@id='password']
+
+6. Younger to Elder Sibling
+
+basic xPath/preceding-sibling::tagName
+
+//input[@id='password']/preceding-sibling::label
+
+7. Elder to Younger Cousin
+
+basic xPath/following::tagName
+
+//input[@id='username']/following::label
+
+8. Younger to Elder Cousin
+
+basic xPath/preceding::tagName
+
+//label[text()='Password']/preceding:label
+
+
+Classroom Assignment:
+
+Myntra:
+//input[@value='Flying Machine']/following-sibling::div
+
+Salesforce:
+//span[text()='First Name']/parent::label/following-sibling::input
+
+Leaftaps:
+//div[@class='x-grid3-cell-inner x-grid3-col-partyId']/a
+
+
